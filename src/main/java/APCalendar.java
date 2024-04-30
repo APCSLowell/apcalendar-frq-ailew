@@ -12,7 +12,13 @@ public class APCalendar
    */
   public static int numberOfLeapYears(int year1, int year2)
   { 
-    /* to be implemented in part (a) */
+        int count = 0;
+    for (int year = year1; year <= year2; year++) {
+        if (isLeapYear(year)) {
+            count++;
+        }
+    }
+    return count;
 
   }
   
@@ -51,6 +57,8 @@ public class APCalendar
    */
   public static int dayOfWeek(int month, int day, int year)
   {
-    /* to be implemented in part (b) */
+        int firstDay = firstDayOfYear(year);
+    int dayOfYear = dayOfYear(month, day, year);
+    return (firstDay + dayOfYear - 1) % 7;
   }
 }
